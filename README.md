@@ -1,1 +1,3 @@
 # Pied-Piper-GYM
+# If you notice the DS_store file in our github repo there are no worries about it. The . DS_Store file is used to store metadata for icon information and are only created when using the gui to browse the file system. And you can also hide it...
+
