@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css files/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
@@ -10,11 +11,11 @@
 <body>
     <!-- we divide each page into three main sections 'header' , 'main' and 'footer' just to orgnize the work -->
     
-
+    
     <header>
         <!-- navbar and image in the header -->
       
-            <nav class="navbar navbar-expand-sm  bg-white  navbar-light fixed-top">
+            <nav class="navbar navbar-expand-sm  navbar-light fixed-top" >
                 <div class="container-fluid ">
                   <a class="logo-img" class="navbar-brand" href="./index.html">
                     <img  src="./assets/Images/logoLight.jpeg" alt="" width="50px" height="45px">
@@ -60,14 +61,42 @@
 
     </header>
     <main>
-        <div class="container-fluid " style="background-image: url(./assets/Images/NOV22-Motivation-tips-Header.jpg);  height: 50vh; background-repeat: no-repeat; background-position: center; background-size: cover;">
+        <div class="container  main-content" >
+          <!-- new row start -->
+          <div class="row align-items-center ">
+            <div class="col-sm-8">
+              <h1 class="main-content-text" style="font-size: 100px;">Are you ready <br/>Get Fit, <span style="font-weight: 600;">Strong</span><br/>& Motivated</h1>
+            </div>
+          
+            <div class="col-sm-4">
+              <img src="./assets/Images/img3.jpg" alt="" width="450px" height="550px">
+            </div>
+            </div>
+            <!-- new row end -->
+            
+            <!-- new row start -->
+            <div class="row align-items-center "> 
+                <div class="col-sm-6">
+                    <img src="./assets/Images/img2.jpg" alt="" width="540px" height="550px">
+                </div>
+                <div class="col-sm-6 text-center ">
+                    <h1 style="font-size: 70px;">Reach Your Limits<br/> And Get To The <br/>Next Level</h1>
+                   <a href="./assets/HTML Files/mempership.html" class="btn btn-white btn-outline-dark">Get Membership</a>
+                </div>
+            </div>
+            <!-- new row end -->
+            
+
           </div>
+          
     </main>
+
     <footer class="footer-copyrights" >
       
           <h3 >CopyRights© Pied Piper 2023 </h3>
         
     </footer>
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>

@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@200;300;500;600;700;1000&family=Oleo+Script:wght@400;700&family=Poppins:ital,wght@0,200;0,500;0,700;0,800;0,900;1,300;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,400;1,300&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,700&family=Young+Serif&display=swap');
 *{
     padding: 0;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Clash Display', sans-serif;
+    box-sizing: border-box;
 }
 
 .logo-img{
     margin-left: 5vw;
+}
+
+
+nav{
+    background-color: #ffffff00;
+}
+#mynavbar ul li:hover{
+    background-color: black;
+    
+}
+#mynavbar ul li a:hover{
+    color: aliceblue;
 }
 .footer-copyrights{
     height: 8vh;
@@ -15,15 +29,21 @@
     justify-content: center;
     align-items: center;
    
-    }
-    .devesion{
-        height: 100vh;
-    }
-    .footer-copyrights h3{
-        color: white;
-    }
+}
 
-    .card{
-        margin: 1.5vw;
-    }
+.footer-copyrights h3{
+    color: white;
+}
+/* membership page style start */
+.card{
+    margin: 1.5vw;
+}
+/* membership page style end */
+.main-content{
+    margin-top: 180px;
+}
+
+
+
+    
     
