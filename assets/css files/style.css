@@ -57,6 +57,13 @@ table p {
 .about-us-content h2 {
     color: red;
 }
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px; /* Set the desired font size */
+  }
 
 .footer-copyrights{
     height: 8vh;
