@@ -21,6 +21,43 @@ nav{
 #mynavbar ul li a:hover{
     color: aliceblue;
 }
+table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table tr:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+table p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.about-us-content {
+    padding: 20px;
+}
+
+.about-us-content h2 {
+    color: red;
+}
+
 .footer-copyrights{
     height: 8vh;
     width: 100%;
