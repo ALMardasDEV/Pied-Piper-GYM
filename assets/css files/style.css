@@ -21,6 +21,8 @@ nav{
 #mynavbar ul li a:hover{
     color: aliceblue;
 }
+
+/*  */
 table {
     width: 90%;
     margin: 0 auto;
@@ -49,6 +51,7 @@ table p {
     font-size: 16px;
     margin-top: 10px;
 }
+/*  */
 
 .about-us-content {
     padding: 20px;
@@ -86,6 +89,217 @@ table p {
 .main-content{
     margin-top: 180px;
 }
+
+.main-grid-content-right, .main-grid-content-left{
+    
+    height: 70vh;
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 3vw 2fr 1fr 2vw;
+    grid-template-rows: 1fr ;
+    margin-top: 6vw;
+    align-items: center;
+}
+
+
+
+.main-grid-content-left{
+    grid-template-columns: 3vw 1fr 2fr 3vw;
+    margin-top: 10vw;
+    
+
+}
+.main-grid-content-left .main-grid-content-text{
+    text-align: center;
+}
+.main-grid-content-text{
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.main-grid-content-img img{
+    width: 550px;
+    height: 650px;
+}
+.main-grid-content-text-btn{
+    font-size: 30px;
+    padding: 8px;
+    background-color:  rgba(149, 146, 146, 0.731);
+    border: none;
+    border-radius: 5px;
+}
+.main-grid-content-text-btn:hover{
+    color: white;
+    background-color: black;
+    border-radius: 20px ;
+}
+
+.main-grid-content-text-span{
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.col-of-info{
+    margin-top: 10vw;
+    height: 60vh;
+    display: grid;
+    grid-template-columns:3vw 1fr 1fr 1fr 3vw;
+    grid-template-rows: 1fr ;    
+}
+
+.col-of-info-text{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5vw;
+    border: 1px solid white;
+    background-color: black;
+}
+
+.col-of-info-header{
+    grid-column-start: 2;
+    grid-column-end: 5;
+    border-top: 1px solid black;
+    font-size: 5vw;
+
+}
+.col-of-info-text span{
+    font-size: 80px;
+}
+
+
+
+/* fitness page Style Start */
+.fitness-info-grid{
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+
+}
+.fitness-info-grid  div{
+    border: 1px solid black;   
+}
+.fitness-info-grid .fitness-info-grid-img{
+    grid-row-start: 2;
+    grid-row-end:4 ;
+    background-image: url(../Images/img7.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+/* fitness page Style END */
+/* 1200px */
+@media screen and (max-width:1200px){
+    .main-grid-content-text{
+        font-size: 60px;
+        font-weight: 700;
+    }
+    
+    .main-grid-content-img img{
+        width: 450px;
+        height: 500px;
+    }
+
+}
+/* 992 */
+
+@media screen and (max-width:992px){
+
+    .main-grid-content-text{
+        font-size: 50px;
+        font-weight:650px;
+    }
+    
+    .main-grid-content-img img{
+        width: 400px;
+        height: 450px;
+    }
+    .main-grid-content-left{
+        margin-top: 6vw;
+    }
+}
+
+/* 768 */
+
+@media screen and (max-width:768px){
+    .main-grid-content-text{
+        font-size: 40px;
+        font-weight:500px;
+    }
+    
+    .main-grid-content-img img{
+        width: 300px;
+        height: 350px;
+    }
+    .main-grid-content-right, .main-grid-content-left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .main-grid-content-left{
+        margin-top: 4vw;
+    }
+    .main-grid-content-text-span{
+        font-size: 60px;
+        font-weight: 500;
+    }
+    
+}
+
+/* none display the phone style while the screen view port does not reach 576px */
+.phone-style{
+    display: none;
+}
+/* 576 */
+@media screen and (max-width:576px){
+    .big-screen-style{
+        display: none;
+    }
+    .phone-style{
+        display: block;
+        margin-top: 60px;
+    }
+    .main-grid-content-phone{
+        height: 150vh;
+        display: grid;
+        grid-template-columns: 3vw 1fr 3vw;
+        grid-template-rows: 300px 450px 350px;
+    }
+    .main-grid-content-phone-text{
+        text-align: center;
+        font-size: 40px;
+        font-weight:700;
+    }
+    
+    .main-grid-content-phone-img{
+        background-image: url(../Images/img5-small.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .col-of-info{
+        margin-top: 10vw;
+        height: 110vh;
+
+        display: grid;
+        grid-template-columns:3vw 1fr 3vw;
+        grid-template-rows: 1fr 1fr 1fr;    
+    }
+    .col-of-info-text{
+        margin: 10px 0;
+    }
+    
+}
+
+
 
 
 
