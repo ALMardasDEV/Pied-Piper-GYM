@@ -4,6 +4,7 @@
     margin: 0;
     font-family: 'Clash Display', sans-serif;
     box-sizing: border-box;
+    
 }
 
 .logo-img{
@@ -81,14 +82,8 @@ table p {
 .footer-copyrights h3{
     color: white;
 }
-/* membership page style start */
-.card{
-    margin: 1.5vw;
-}
-/* membership page style end */
-.main-content{
-    margin-top: 180px;
-}
+
+
 
 .main-grid-content-right, .main-grid-content-left{
     
@@ -175,7 +170,7 @@ table p {
 
 /* fitness page Style Start */
 .fitness-info-grid{
-    height: 80vh;
+    height: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr 0.5fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -194,7 +189,158 @@ table p {
     background-size: cover;
    
 }
+
+
+
 /* fitness page Style END */
+
+/* About Us page Start */
+
+.about-us-grid{
+    display: grid;
+    height: 150vh;
+    grid-template-columns: 0.6fr  1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 2vw;
+    margin-top: 8vw;
+    margin-bottom: 200px;
+}
+.about-us-header {
+    grid-row-start: 1;
+    grid-row-end: 5;
+    margin-left: 8vw;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+.about-us-content{
+    border-top: 1px solid black;
+    margin-right: 10vw;
+    font-size: 20px;
+}
+.about-us-content-main{
+   padding: 1vw;
+    margin-right: 10vw;
+    letter-spacing: 1px;
+}
+
+.about-us-content-span{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/* About Us page END */
+
+
+/* info fitness Start */
+.cards-flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.flex-card-img{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150px;
+    width: 300px;
+    
+}
+.flex-card {
+    display: flex;
+    width: 350px;
+    height: 400px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 20px;
+    
+}
+.flex-card div{
+    padding: 5px;
+}
+/* info fitness End */
+
+
+/* membership page style start */
+.card-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color:#fff;
+}
+.card-btn:hover{
+    background-color: black;
+    color: #fff;
+}  
+/* membership page style end */
+
+/* forn style Start */
+    .form-style{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;
+        margin: 5vw 30vw ;
+        border-radius: 30px;
+        background-color: white;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+/* forn style End */
+
+
+/* sign up style Start */
+.form-sign-style-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+.form-sign-style {
+    max-width: 500px;
+    max-height: 500px;
+   
+}
+.form-sign-style form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 10vw;
+
+
+}
+.form-sign-style label{
+    font-size: 18px;
+}
+.form-sign-style button{
+    width: 90px;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.btn-red:hover{
+    color: #ee7474;
+    border: 1px solid rgb(180, 180, 186);
+}
+.btn-green:hover{
+    color: #57c285;
+    border: 1px solid rgb(180, 180, 186);
+}
+
+/* sign up style End */
 /* 1200px */
 @media screen and (max-width:1200px){
     .main-grid-content-text{
@@ -224,6 +370,15 @@ table p {
     .main-grid-content-left{
         margin-top: 6vw;
     }
+
+    /* about us Start */
+    .about-us-content , .about-us-content-main{
+        font-size: 15px;
+    }
+    .about-us-header{
+        font-size: 40px;
+    }
+    /* about us END */
 }
 
 /* 768 */
@@ -278,6 +433,13 @@ table p {
         font-size: 40px;
         font-weight:700;
     }
+    .main-grid-content-text-btn{
+        font-size: 20px;
+        padding: 10px;
+        background-color:  rgba(149, 146, 146, 0.731);
+        border: none;
+        border-radius: 5px;
+    }
     
     .main-grid-content-phone-img{
         background-image: url(../Images/img5-small.jpg);
@@ -296,6 +458,40 @@ table p {
     .col-of-info-text{
         margin: 10px 0;
     }
+    /* about us Start */
+    .about-us-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    }
+    .about-us-header {
+        text-align: center;
+        margin-left: 0;
+        background-color: rgb(201, 214, 226);
+        font-weight: 500;
+        letter-spacing: 10px;
+    }
+    .about-us-content{
+        border-top: 1px solid black;
+        margin-right: 10vw;
+        
+    }
+    .about-us-content-main{
+       padding: 1vw;
+        padding: 20px;
+        letter-spacing: 1px;
+    }
+    /* about us End */
+
+    /* form Start */
+    .form-sign-style label{
+        font-size: 14px;
+        
+    }
+    .form-style{
+        margin: 5vw 10vw;
+    }
+    /* form End */
     
 }
 
