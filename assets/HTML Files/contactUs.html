@@ -59,18 +59,24 @@
 
       
          <div class="form-style">
-          <form action="" >
+          <!-- Using https://formsubmit.co to activate our Email -->
+          <form action="https://formsubmit.co/piedpiperfitness@gmail.com" method="POST" >
             <h2 >Email Us</h2>
          <div class="mb-3 mt-3">
+          <label for="name">Full Name:</label> 
+           <input id="name" type="name" class="form-control" placeholder="Enter Full Name" name="fullname" required autofocus>
+         </div> 
+         <div class="mb-3 mt-3">
+          <label for="subject">Subject:</label> 
+           <input id="subject" type="text" class="form-control" placeholder="Enter your subject" name="subject">
+         </div>
+         <div class="mb-3">
           <label for="email">Email:</label> 
-           <input type="email" class="form-control" placeholder="Enter email" name="email" required autofocus>
-         </div> <div class="mb-3">
-          <label for="pswd">Password:</label> 
-           <input id="pswd" type="password" class=" form-control"placeholder="Enter password" name="pswd" required>
+           <input id="email" type="email" class=" form-control"placeholder="Enter Email" name="email" required>
          </div>
           <div class="mb-3">
-          <label for="pwd">Message:</label> 
-           <textarea id="pwd" class=" form-control" name="pswd" required></textarea>
+          <label for="Message">Message:</label> 
+           <textarea id="Message" class=" form-control" name="Message" required></textarea>
          </div> 
          <div class="form-sign-style">
           <button type="submit" class="btn-green">Submit</button>

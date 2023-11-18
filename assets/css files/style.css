@@ -139,7 +139,7 @@ table p {
     margin-top: 10vw;
     height: 60vh;
     display: grid;
-    grid-template-columns:3vw 1fr 1fr 1fr 3vw;
+    grid-template-columns:5vw 1fr 1fr 1fr 4vw;
     grid-template-rows: 1fr ;    
 }
 
@@ -452,7 +452,7 @@ table p {
         height: 110vh;
 
         display: grid;
-        grid-template-columns:3vw 1fr 3vw;
+        grid-template-columns:7vw 1fr 7vw;
         grid-template-rows: 1fr 1fr 1fr;    
     }
     .col-of-info-text{
