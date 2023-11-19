@@ -57,8 +57,9 @@
     if (confirm(" you don't want swimming pool?"))  list[0]=0;
     if (confirm(" you don't want cardio"))  list[1]=0;
     if (confirm(" you don't want fitness coach"))  list[2]=0;
-
-    document.write(calculation(age, month, list));
+    if (confirm(" your age is " + age + "\n you want to subscribr for" + month+ " months"))  {
+        alert("you hsve "+ discount(age,month)*100 +"%, and you will pay:"+ calculation(age,month,list)+" OR")
+    }
 </script>
         
         
