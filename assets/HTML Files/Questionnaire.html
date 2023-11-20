@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pied Piper Fitness">
+    <meta name="keywords" content="fitness , gym , pied piper  , fitness information">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,300&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <title>Gym Feedback Form</title>
+   
+    <style>
+        /* styles.css - CSS file for styling the gym feedback form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border-color: #0f0000;
+            
+            box-shadow: 0 0 1px rgb(0, 0, 0);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #fbfbfb;
+            color: #040000;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0f0000;
+        }
+
+        .error {
+            color: #f00;
+            font-size: 14px;
+            margin-top: -8px;
+            margin-bottom: 12px;
+        }
+
+        .options {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .options label {
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <!-- navbar and image in the header -->
+      
+            <nav class="navbar navbar-expand-sm  navbar-light " >
+                <div class="container-fluid ">
+                  <a class="logo-img" class="navbar-brand" href="./index.html">
+                    <img  src="../Images/logoLight.jpeg" alt="" width="50px" height="45px">
+                  </a>
+                  <!-- adding button for the toggler -->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <!-- centering the nav links using 'justify-content-center' -->
+                  <div class="collapse navbar-collapse justify-content-center " id="mynavbar">
+                    <ul class="navbar-nav ">
+                      <li class="nav-item">
+                        <a class="nav-link" href="/index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./mempership.html">Membership</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./trainers.html">Trainer</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./infoFitness.html">Fitness info</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="./aboutUs.html">About Us</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="./contactUs.html">Contact Us</a>
+                      </li>
+                     
+                    </ul>
+                    
+                  </div>
+                </div>
+              </nav>
+              
+
+    </header>
+
+    <body>
+
+        <form id="gymFeedbackForm" onsubmit="return validateForm()">
+            <label for="trainerName">Trainer's Name:</label>
+            <input type="text" id="trainerName" name="trainerName" required>
+            <div id="trainerNameError" class="error"></div>
+            
+            <label for="trainerRating">Trainer's Rating:</label>
+            <input type="number" id="trainerRating" name="trainerRating" min="1" max="5" required>
+            <div id="trainerRatingError" class="error"></div>
+    
+            <label for="gymFeedback">Gym Feedback:</label>
+            <textarea id="gymFeedback" name="gymFeedback" rows="4" required></textarea>
+            <div id="gymFeedbackError" class="error"></div>
+    
+            <label for="trainerEmail">Trainer's Email:</label>
+            <input type="email" id="trainerEmail" name="trainerEmail" required>
+            <div id="trainerEmailError" class="error"></div>
+    
+            <label>Preferred Contact Methods:</label>
+            <div id="contactMethodOptions" class="options">
+                <input type="checkbox" id="contactEmail" name="contactMethod" value="email"> <label for="contactEmail">Email</label>
+                <input type="checkbox" id="contactPhone" name="contactMethod" value="phone"> <label for="contactPhone">Phone</label>
+                <input type="checkbox" id="contactText" name="contactMethod" value="text"> <label for="contactText">Text</label>
+            </div>
+            <div id="contactMethodError" class="error"></div>
+            
+            <label for="additionalComments">Additional Comments:</label>
+            <textarea id="additionalComments" name="additionalComments" rows="4"></textarea>
+            <div id="additionalCommentsError" class="error"></div>
+    
+            <label for="equipmentSatisfaction">Equipment Satisfaction:</label>
+            <div id="equipmentSatisfactionOptions" class="options">
+                <input type="radio" id="satisfactionExcellent" name="equipmentSatisfaction" value="excellent"> <label for="satisfactionExcellent">Excellent</label>
+                <input type="radio" id="satisfactionGood" name="equipmentSatisfaction" value="good"> <label for="satisfactionGood">Good</label>
+                <input type="radio" id="satisfactionAverage" name="equipmentSatisfaction" value="average"> <label for="satisfactionAverage">Average</label>
+                <input type="radio" id="satisfactionPoor" name="equipmentSatisfaction" value="poor"> <label for="satisfactionPoor">Poor</label>
+            </div>
+            <div id="equipmentSatisfactionError" class="error"></div>
+    
+            <label for="cleanliness">Cleanliness:</label>
+            <div id="cleanlinessOptions" class="options">
+                <input type="radio" id="cleanlinessExcellent" name="cleanliness" value="excellent"> <label for="cleanlinessExcellent">Excellent</label>
+                <input type="radio" id="cleanlinessGood" name="cleanliness" value="good"> <label for="cleanlinessGood">Good</label>
+                <input type="radio" id="cleanlinessAverage" name="cleanliness" value="average"> <label for="cleanlinessAverage">Average</label>
+                <input type="radio" id="cleanlinessPoor" name="cleanliness" value="poor"> <label for="cleanlinessPoor">Poor</label>
+            </div>
+            <div id="cleanlinessError" class="error"></div>
+    
+            <input type="submit" value="Submit">
+        </form>
+    
+        <script>
+            // script.js - JavaScript file for gym feedback form validation
+    
+            // Function to validate the form
+            function validateForm() {
+                // Validation for trainer's name (should contain only letters)
+        var trainerName = document.getElementById("trainerName").value;
+        var trainerNamePattern = /^[a-zA-Z\s]+$/;
+        var trainerNameError = document.getElementById("trainerNameError");
+        
+        if (!trainerNamePattern.test(trainerName)) {
+            trainerNameError.innerHTML = "Please enter a valid name.";
+            return false;
+        } else {
+            trainerNameError.innerHTML = "";
+        }
+    
+        // Validation for trainer's rating (should be a number between 1 and 5)
+        var trainerRating = document.getElementById("trainerRating").value;
+        var trainerRatingError = document.getElementById("trainerRatingError");
+    
+        if (isNaN(trainerRating) || trainerRating < 1 || trainerRating > 5) {
+            trainerRatingError.innerHTML = "Please enter a valid rating between 1 and 5.";
+            return false;
+        } else {
+            trainerRatingError.innerHTML = "";
+        }
+    
+        // Validation for gym feedback (should not be empty)
+        var gymFeedback = document.getElementById("gymFeedback").value;
+        var gymFeedbackError = document.getElementById("gymFeedbackError");
+    
+        if (gymFeedback.trim() === "") {
+            gymFeedbackError.innerHTML = "Please provide feedback for the gym.";
+            return false;
+        } else {
+            gymFeedbackError.innerHTML = "";
+        }
+    
+        // Validation for trainer's email (should follow a basic email pattern)
+        var trainerEmail = document.getElementById("trainerEmail").value;
+        var trainerEmailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var trainerEmailError = document.getElementById("trainerEmailError");
+    
+        if (!trainerEmailPattern.test(trainerEmail)) {
+            trainerEmailError.innerHTML = "Please enter a valid email address.";
+            return false;
+        } else {
+            trainerEmailError.innerHTML = "";
+        }
+    
+        // Validation for contact methods (at least one option should be selected)
+        var contactMethodOptions = document.querySelectorAll('input[name="contactMethod"]:checked');
+        var contactMethodError = document.getElementById("contactMethodError");
+    
+        if (contactMethodOptions.length === 0) {
+            contactMethodError.innerHTML = "Please select at least one contact method.";
+            return false;
+        } else {
+            contactMethodError.innerHTML = "";
+        }
+    
+        // Validation for equipment satisfaction (one option should be selected)
+        var equipmentSatisfactionOptions = document.querySelectorAll('input[name="equipmentSatisfaction"]:checked');
+        var equipmentSatisfactionError = document.getElementById("equipmentSatisfactionError");
+    
+        if (equipmentSatisfactionOptions.length === 0) {
+            equipmentSatisfactionError.innerHTML = "Please select your equipment satisfaction.";
+            return false;
+        } else {
+            equipmentSatisfactionError.innerHTML = "";
+        }
+    
+        // Validation for cleanliness (one option should be selected)
+        var cleanlinessOptions = document.querySelectorAll('input[name="cleanliness"]:checked');
+        var cleanlinessError = document.getElementById("cleanlinessError");
+    
+        if (cleanlinessOptions.length === 0) {
+            cleanlinessError.innerHTML = "Please select your cleanliness satisfaction.";
+            return false;
+        } else {
+            cleanlinessError.innerHTML = "";
+        }
+    
+        // ... (previous validation code)
+    
+                
+    
+        // If all validations pass, the form will be submitted
+        return true;
+         }
+    
+           // Add event listeners for real-time validation feedback
+            document.getElementById("satisfactionExcellent").addEventListener("change", validateForm);
+            document.getElementById("satisfactionGood").addEventListener("change", validateForm);
+            document.getElementById("satisfactionAverage").addEventListener("change", validateForm);
+            document.getElementById("satisfactionPoor").addEventListener("change", validateForm);
+            document.getElementById("cleanlinessExcellent").addEventListener("change", validateForm);
+            document.getElementById("cleanlinessGood").addEventListener("change", validateForm);
+            document.getElementById("cleanlinessAverage").addEventListener("change", validateForm);
+            document.getElementById("cleanlinessPoor").addEventListener("change", validateForm);
+            document.getElementById("trainerName").addEventListener("input", validateForm);
+            document.getElementById("trainerRating").addEventListener("input", validateForm);
+            document.getElementById("gymFeedback").addEventListener("input", validateForm);
+            document.getElementById("trainerEmail").addEventListener("input", validateForm);
+            document.getElementById("contactEmail").addEventListener("change", validateForm);
+            document.getElementById("contactPhone").addEventListener("change", validateForm);
+            document.getElementById("contactText").addEventListener("change", validateForm);
+            document.getElementById("additionalComments").addEventListener("input", validateForm);
+        </script>
+    <footer class="footer-copyrights" >
+      
+        <h3 >CopyRights© Pied Piper 2023 </h3>
+      
+  </footer>
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+   
+</body>
+
+    
+</html>
