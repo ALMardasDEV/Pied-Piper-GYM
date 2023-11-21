@@ -67,7 +67,7 @@
         <div class="card">
           <div class="card-body">
             <h2>Discount page</h2>
-            <form action="#" method="post">
+            <form action="#" method="post" id="userPreferencesForm">
           
           <div class="mb-3">
               <label for="age" class="form-label">Select Your Age:</label>
@@ -187,7 +187,7 @@
                 </div>
               </div>
     
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <a href="./Subscribe.html"><button type="submit" class="btn btn-primary">Submit</button></a>
     
             </form>
           </div>
@@ -196,18 +196,28 @@
 
       
       <script>
-    
-        // Assume information from  the subscribe page
-        var userPreferences = {
-          swimming: true,
-          cardio: false,
-          fitnessCoach: true
-        };
-    
-        // Pre-check the checkboxes based on the user's preferences
+var userPreferences = JSON.parse(localStorage.getItem('userPreferences')) || {};
+
+  //   window.addEventListener('message', function(event) {
+  //   // Check the origin of the message to ensure security
+  //   if (event.origin !== window.location.origin) {
+  //     return;
+  //   }
+
+  //   // Get the userPreferences from the message
+  //   var userPreferences = event.data.userPreferences;
+
+  //   // You can now use userPreferences on this page
+  //   console.log(userPreferences);
+
+  //   // Update checkboxes or perform other actions based on userPreferences
+  //   document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('swimmingCheckbox').checked = userPreferences.swimming;
         document.getElementById('cardioCheckbox').checked = userPreferences.cardio;
         document.getElementById('fitnessCoachCheckbox').checked = userPreferences.fitnessCoach;
+        document.getElementById('subscriptionMonths').value=userPreferences.month
+  //     });
+  // });
     
         document.getElementById('userPreferencesForm').addEventListener('submit', function(event) {
           event.preventDefault(); // Prevents the form from submitting in the traditional way
@@ -226,7 +236,7 @@
           var discountPercentage = discount(age, month) * 100;
           var discountedBill = calculation(age, month, list);
     
-          alert("You have a " + discountPercentage + "% discount, and you will pay: " + discountedBill);
+         if (confirm("You have a " + discountPercentage + "% discount, and you will pay: " +Math.floor(discountedBill,3))) window.location.href = "http://127.0.0.1:3000/assets/HTML Files/Subscribe.html";;
         });
     
         function discount(Age, Month) {
