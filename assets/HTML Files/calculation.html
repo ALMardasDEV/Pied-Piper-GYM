@@ -236,7 +236,7 @@ var userPreferences = JSON.parse(localStorage.getItem('userPreferences')) || {};
           var discountPercentage = discount(age, month) * 100;
           var discountedBill = calculation(age, month, list);
     
-         if (confirm("You have a " + discountPercentage + "% discount, and you will pay: " +Math.floor(discountedBill,3))) window.location.href = "http://127.0.0.1:3000/assets/HTML Files/Subscribe.html";;
+         if (confirm("You have a " + discountPercentage + "% discount, and you will pay: " +Math.floor(discountedBill,3))) window.location.href = "./Subscribe.html";;
         });
     
         function discount(Age, Month) {
