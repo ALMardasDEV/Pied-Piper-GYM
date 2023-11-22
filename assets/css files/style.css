@@ -341,6 +341,34 @@ table p {
 }
 
 /* sign up style End */
+
+/* Start banner */
+.text-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 1000;
+    }
+    .banner-placeholder {
+        /* Set the height to the banner's height to reserve space */
+        height: 40px; /* Adjust as needed */
+      }
+    .text-banner p {
+    margin: 0;
+    }
+
+    #companyName {
+    font-weight: bold;
+    
+    }
+/* End banner */
 /* 1200px */
 @media screen and (max-width:1200px){
     .main-grid-content-text{
