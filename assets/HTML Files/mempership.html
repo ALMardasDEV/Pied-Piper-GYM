@@ -103,6 +103,7 @@
             fitnessCoach: true,
             month:1
           };
+          // this function help us make var that have all information of the memverships cards
         
           function updatePreferences(cardNumber) {
             switch (cardNumber) {
@@ -143,10 +144,9 @@
                 };
                 
             }
+            // send the var that the calculation page can use it to initial values
            localStorage.setItem('userPreferences', JSON.stringify(userPreferences));
-
-  // Redirect to another page
-  window.location.href = "./calculation.html"; // sessionStorage.setItem('userPreferences', JSON.stringify(userPreferences));
+           window.location.href = "./calculation.html"; 
 }
 </script>
     </main>

@@ -207,37 +207,23 @@
 
       
       <script>
-var userPreferences = JSON.parse(localStorage.getItem('userPreferences')) || {};
-
-  //   window.addEventListener('message', function(event) {
-  //   // Check the origin of the message to ensure security
-  //   if (event.origin !== window.location.origin) {
-  //     return;
-  //   }
-
-  //   // Get the userPreferences from the message
-  //   var userPreferences = event.data.userPreferences;
-
-  //   // You can now use userPreferences on this page
-  //   console.log(userPreferences);
-
-  //   // Update checkboxes or perform other actions based on userPreferences
-  //   document.addEventListener('DOMContentLoaded', function () {
+        // get the in userPreferences from the membership card that user choose than initial values fo user Preferences 
+        var userPreferences = JSON.parse(localStorage.getItem('userPreferences')) || {};
         document.getElementById('swimmingCheckbox').checked = userPreferences.swimming;
         document.getElementById('cardioCheckbox').checked = userPreferences.cardio;
         document.getElementById('fitnessCoachCheckbox').checked = userPreferences.fitnessCoach;
         document.getElementById('subscriptionMonths').value=userPreferences.month
-  //     });
-  // });
-    
+
+        // get the value from the form to callculate the discont
         document.getElementById('userPreferencesForm').addEventListener('submit', function(event) {
-          event.preventDefault(); // Prevents the form from submitting in the traditional way
+          event.preventDefault(); 
     
           var age = document.getElementById('age').value;
           var month = document.getElementById('subscriptionMonths').value;
           var preferences = document.getElementsByName('preferences');
+        //  The vale of the serves start with swiming pool than the carido and the last one is the fivess coach
           var list = [3, 5, 10];
-    
+        // but the vale 0 if the user do want the same serves
           for (var i = 0; i < preferences.length; i++) {
             if (!preferences[i].checked) {
               list[i] = 0;
@@ -246,10 +232,10 @@ var userPreferences = JSON.parse(localStorage.getItem('userPreferences')) || {};
     
           var discountPercentage = discount(age, month) * 100;
           var discountedBill = calculation(age, month, list);
-    
-         if (confirm("You have a " + discountPercentage + "% discount, and you will pay: " +Math.floor(discountedBill,3))) window.location.href = "./Subscribe.html";;
+    // told the user if he want memverships or not
+         if (confirm("You have a " + discountPercentage + "% discount, and you will pay: " +Math.floor(discountedBill,3)+" OR")) window.location.href = "./Subscribe.html";;
         });
-    
+       //  give tthe discount in one month indebendent of age of the user and the number fo the month he want
         function discount(Age, Month) {
           this.month = Month;
           this.age = Age;
@@ -282,7 +268,7 @@ var userPreferences = JSON.parse(localStorage.getItem('userPreferences')) || {};
     
           return this.ageDiscount() + this.monthDiscount();
         }
-    
+        // this calculat how much he will pay 
         function calculation(Age, Month, List) {
           this.bill = 0;
           for (var x of List) this.bill += x;
