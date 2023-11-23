@@ -75,20 +75,20 @@
             </div>
             <div class="flex-card">
                 <div><h3>Two months</h3></div>
-                <div><h1>30 RO</h1></div>
+                <div><h1>45 RO</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div ><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(2)">Subsicribe</button></a></p></div>
             </div>
             <div class="flex-card">
                 <div><h3>Six months </h3></div>
-                <div><h1>50 RO</h1></div>
+                <div><h1>130 RO</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(3)">Subsicribe</button></a></p></div>
             </div>
 
             <div class="flex-card">
                 <div><h3>One year</h3></div>
-                <div><h1>80 RO</h1></div>
+                <div><h1>255 RO</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div ><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(4)">Subsicribe</button></a></p></div>
             </div>
@@ -109,16 +109,16 @@
             switch (cardNumber) {
               case 1:
                 userPreferences = {
-                  swimming: true,
-                  cardio: false,
-                  fitnessCoach: true,
+                  swimming: false,
+                  cardio: true,
+                  fitnessCoach: false,
             month:1
                 };
                 break;
               case 2:
                 userPreferences = {
-                  swimming: false,
-                  cardio: false,
+                  swimming: true,
+                  cardio: true,
                   fitnessCoach: true
                   ,
             month:2
@@ -126,9 +126,9 @@
                 break;
               case 3:
                 userPreferences = {
-                  swimming: false,
+                  swimming: true,
                   cardio: true,
-                  fitnessCoach: false,
+                  fitnessCoach: true,
             month:6
                 };
                 break;
@@ -138,8 +138,8 @@
                 // Default values if no match is found
                 userPreferences = {
                   swimming: true,
-                  cardio: false,
-                  fitnessCoach: false,
+                  cardio: true,
+                  fitnessCoach: true,
             month:12
                 };
                 
