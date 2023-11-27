@@ -29,7 +29,7 @@ let tableElderlyData =[
 ];
 
 
-function loadChildrenData(anyData){
+function loadData(anyData){
     const tableBody = document.getElementById('tableData');
     let dataHtml='';
     for(let data of anyData){
