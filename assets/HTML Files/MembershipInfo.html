@@ -78,83 +78,42 @@
     </header>
 
     <main class="container" style="margin-top: 15vw;">
-        <div class="table-style">
-          <h3 class="table-header">Membership Information : </h3>
-        <table class="table" >
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">one month</th>
-                <th scope="col">two months</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>--</td>
-                <td>swimming pool</td>
-                
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>cardio</td>
-                <td>cardio</td>
-                
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>--</td>
-                <td>fitness coach</td>
-                
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>free meal</td>
-                <td>free meal</td>
-                
-              </tr>
-            </tbody>
-          </table>
+      <div class="container" style="border: 1px solid black; border-radius: 20px; padding: 3% ;max-width: 80%; margin-top: 5vw;">
+        <br/>
+        <br/>
+        <div>
+          <h3>Choose your age:</h3>
+        </div> <br/>
+        <div>
+          <h5>Age:</h5>
+          <form action="">
+            <label for="info1">one</label>
+            <input id="info1" name="info" type="radio" value="1"  onchange="loadChildrenData(tableChildrensData)" >
 
-          <!--  -->
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col"></th>
-                <th scope="col">six months</th>
-                <th scope="col">one year</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>swimming pool</td>
-                <td>swimming pool</td>
-                
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>cardio</td>
-                <td>cardio</td>
-                
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>fitness coach</td>
-                <td>fitness coach</td>
-                
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>free meal</td>
-                <td>free meal</td>
-                
-              </tr>
+            <label for="info2" >two</label>
+            <input id="info2"name="info" type="radio" value="2" onchange="loadChildrenData(tableAdultsData)">
+
+            <label for="info3">six</label>
+            <input id="info3" name="info" type="radio" value="6" onchange="loadChildrenData(tableElderlyData)">
+
+            <label for="info3">one year</label>
+            <input id="info3" name="info" type="radio" value="12" onchange="loadChildrenData(tableElderlyData)">
+          </form>
+        </div> <br/>
+
+        <div>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Source</th>
+            </tr>
+            <tbody id="tableData">
+
             </tbody>
+           
           </table>
         </div>
+      </div>
          
     </main>
     <footer class="footer-copyrights" >
@@ -162,7 +121,7 @@
       <a href="/assets/HTML Files/copyRights.html"><h3 >CopyRights© Pied Piper 2023 </h3></a>
       
     </footer>
-   
+   <script src="../js Files/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
    
