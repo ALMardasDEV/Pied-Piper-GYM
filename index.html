@@ -55,9 +55,9 @@
                           More
                         </a>
                         <ul class="dropdown-menu " >
-                          <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Service 1</li>
-                          <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Service 2</li>
-                          <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Service 3</li>
+                          <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./assets/HTML Files/calculation.html">calculation</a></li>
+                          <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./assets/HTML Files/fun.html">Fun</a></li>
+                          <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./assets/HTML Files/Questionnaire.html">Questionnaire</a></li>
                         </ul>
                     </li>
                      
@@ -92,7 +92,20 @@
         <div></div>
         
         <div class="main-grid-content-img">
-          <img src=".//assets/Images/img4.jpg" alt="">
+          <div class="container mt-5">
+  
+                <div id="carousel">
+                    <div id="img1" style="display:none">
+                        <img src="./assets/Images/img4.jpg" class="d-block w-100" alt="Photo 1" >
+                    </div>
+                    <div id="img2" style="display:none">
+                        <img src="./assets/Images/img3.jpg" class="d-block w-100" alt="Photo 2" >
+                    </div>
+                    <div id="img3" style="display:none">
+                        <img src="./assets/Images/img2.jpg" class="d-block w-100" alt="Photo 3" >
+                    </div>
+                </div>
+        </div>
         </div>
         <div class="main-grid-content-text"><span class="main-grid-content-text-span">Shape Your</span><br/>
           <span style="background-color: rgba(149, 146, 146, 0.731);">Muscle</span><br/>
@@ -180,10 +193,48 @@
       <!-- Phone Display End -->
 
       <div class="text-banner">
-        <p id="bannerText">Welcome to  <span id="companyName">Pied Piper</span> website! Today is <span id="currentDate"></span>, and the time is <span id="currentTime"></span></p>
+        <p id="bannerText">Welcome to  <span id="companyName" >Pied Piper</span> website! Today is <span id="currentDate"></span>, and the time is <span id="currentTime"></span></p>
       </div>
       
     </main>
+    <script>
+      const imgs = document.getElementById("carousel")
+      let index = 1
+      function hideitem() {
+    for (let i = 1; i <= 3; i++) {
+        const currentImgId = `img${i}`;
+        document.getElementById(currentImgId).style.display = 'none';
+    }
+}
+      
+function showitem(index1) {
+    hideitem();
+    document.getElementById(`img${index1}`).style.display = "block";
+    if (index1 == 3) {
+        index1 = 1;
+    } else {
+        index1++;
+    }
+  
+}
+function runWithDynamicParameter() {
+    // Call showitem with the current index
+    showitem(index);
+
+    // Increment the index for the next iteration
+    index = (index % 3) + 1;
+
+    // Set up the next iteration
+    setTimeout(runWithDynamicParameter, 3000);
+}
+
+// Initial call to start the iteration
+runWithDynamicParameter();
+
+
+        
+
+    </script>
 
 
     <footer class="footer-copyrights  " >

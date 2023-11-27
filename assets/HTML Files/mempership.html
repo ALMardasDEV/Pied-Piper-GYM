@@ -49,10 +49,9 @@
                       More
                     </a>
                     <ul class="dropdown-menu " >
-                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Service 1</li>
-                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Service 2</li>
-                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'">Service 3</li>
-                    </ul>
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculation.html">calculation</a></li>
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./fun.html">Fun</a></li>
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li> </ul>
                 </li>
                  
                 </ul>
@@ -69,26 +68,26 @@
             
             <div class="flex-card">
                 <div><h3>One month</h3></div>
-                <div><h1>15 RO</h1></div>
+                <div><h1>15 OR</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div ><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(1)">Subsicribe</button></a></p></div>
             </div>
             <div class="flex-card">
                 <div><h3>Two months</h3></div>
-                <div><h1>30 RO</h1></div>
+                <div><h1>45 OR</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div ><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(2)">Subsicribe</button></a></p></div>
             </div>
             <div class="flex-card">
                 <div><h3>Six months </h3></div>
-                <div><h1>50 RO</h1></div>
+                <div><h1>130 OR</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(3)">Subsicribe</button></a></p></div>
             </div>
 
             <div class="flex-card">
                 <div><h3>One year</h3></div>
-                <div><h1>80 RO</h1></div>
+                <div><h1>255 OR</h1></div>
                 <div><p>This membership is offers<span> <a href="./MembershipInfo.html">read more</a></span></p></div>
                 <div ><p><a href="./calculation.html"><button class="card-btn" onclick="updatePreferences(4)">Subsicribe</button></a></p></div>
             </div>
@@ -103,21 +102,22 @@
             fitnessCoach: true,
             month:1
           };
+          // this function help us make var that have all information of the memverships cards
         
           function updatePreferences(cardNumber) {
             switch (cardNumber) {
               case 1:
                 userPreferences = {
-                  swimming: true,
-                  cardio: false,
-                  fitnessCoach: true,
+                  swimming: false,
+                  cardio: true,
+                  fitnessCoach: false,
             month:1
                 };
                 break;
               case 2:
                 userPreferences = {
-                  swimming: false,
-                  cardio: false,
+                  swimming: true,
+                  cardio: true,
                   fitnessCoach: true
                   ,
             month:2
@@ -125,9 +125,9 @@
                 break;
               case 3:
                 userPreferences = {
-                  swimming: false,
+                  swimming: true,
                   cardio: true,
-                  fitnessCoach: false,
+                  fitnessCoach: true,
             month:6
                 };
                 break;
@@ -137,16 +137,15 @@
                 // Default values if no match is found
                 userPreferences = {
                   swimming: true,
-                  cardio: false,
-                  fitnessCoach: false,
+                  cardio: true,
+                  fitnessCoach: true,
             month:12
                 };
                 
             }
+            // send the var that the calculation page can use it to initial values
            localStorage.setItem('userPreferences', JSON.stringify(userPreferences));
-
-  // Redirect to another page
-  window.location.href = "./calculation.html"; // sessionStorage.setItem('userPreferences', JSON.stringify(userPreferences));
+           window.location.href = "./calculation.html"; 
 }
 </script>
     </main>
