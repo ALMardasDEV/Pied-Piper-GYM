@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+
+    <div class="container" style="padding: 1%;">
+        <div class="card">
+            <div class="card-body">
+                <h2>Discount page</h2>
+                <!-- jQuery Form and Bindings -->
+                <form id="discountForm">
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Select Your Age:</label>
+                        <!-- jQuery dynamic age options -->
+                        <select id="age" class="form-control"></select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subscriptionMonths" class="form-label">Number of Months to Subscribe:</label>
+                        <!-- jQuery subscription months input -->
+                        <input type="number" id="subscriptionMonths" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Choose Your Preferences:</label>
+                        <!-- jQuery dynamic checkboxes -->
+                        <div class="form-check">
+                            <input type="checkbox" id="swimmingCheckbox" class="form-check-input">
+                            <label class="form-check-label" for="swimmingCheckbox">Swimming Pool (5 OR)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="cardioCheckbox" class="form-check-input">
+                            <label class="form-check-label" for="cardioCheckbox">Cardio (15 OR)</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="fitnessCoachCheckbox" class="form-check-input">
+                            <label class="form-check-label" for="fitnessCoachCheckbox">Fitness Coach (5 OR)</label>
+                        </div>
+                    </div>
+
+                    <!-- jQuery button click event -->
+                    <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Generate age options from 10 to 100 using jQuery
+            var ageSelect = $('#age');
+            for (var i = 10; i <= 100; i++) {
+                ageSelect.append($('<option>', {
+                    value: i,
+                    text: i
+                }));
+            }
+
+            // jQuery button click event
+            $('#submitButton').click(function () {
+                var age = $('#age').val() || 18;
+                var month = $('#subscriptionMonths').val();
+                var list = [5 * $('#swimmingCheckbox').prop('checked'), 15 * $('#cardioCheckbox').prop('checked'), 5 * $('#fitnessCoachCheckbox').prop('checked')];
+
+                var discountPercentage = discount(age, month) * 100;
+                var discountedBill = calculation(age, month, list);
+
+                if (confirm("You have a " + discountPercentage + "% discount, and you will pay: " + Math.floor(discountedBill, 3) + " OR")) {
+                    window.location.href = "./Subscribe.html";
+                }
+            });
+
+            // jQuery discount function
+// jQuery discount function
+function discount(age, month) {
+    function ageDiscount() {
+        var age_discount = 0;
+        switch (true) {
+            case age <= 18:
+                age_discount = 0.09;
+                break;
+            case age <= 30:
+                age_discount = 0;
+                break;
+            case age <= 60:
+                age_discount = 0.1;
+                break;
+            default:
+                age_discount = 0.2;
+        }
+        return age_discount;
+    }
+
+    function monthDiscount() {
+        var month_discount = 0;
+        switch (true) {
+            case month < 6:
+                month_discount = 0;
+                break;
+            case month < 12:
+                month_discount = 0.04;
+                break;
+            default:
+                month_discount = 0.06;
+        }
+        return month_discount;
+    }
+
+    return ageDiscount() + monthDiscount();
+}
+
+
+            // jQuery calculation function
+            function calculation(age, month, list) {
+                var bill = 0;
+    $.each(list, function (index, value) {
+        bill += value;
+    });
+    return bill * month - bill * month * discount(age, month);
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
