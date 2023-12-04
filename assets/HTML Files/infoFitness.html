@@ -72,7 +72,8 @@
                             <ul class="dropdown-menu " >
                               <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculation.html">calculation</a></li>
                               <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./fun.html">Fun</a></li>
-                              <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li></ul>
+                              <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li>
+                              <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculationjQuery.html">CalculationjQuery</a></li></ul>
                         </li>
                          
                         </ul>
@@ -130,22 +131,51 @@
               <input id="age2"name="age" type="radio" value="adult" onchange="loadData(tableAdultsData)">
 
               <label for="age3">Elderly</label>
-              <input id="age3" name="age" type="radio" value="elderly" onchange="loadData(tableElderlyData)">
+              <input id="age3" name="age" type="radio" value="elderly" onchange="loadData(tableElderlyData)"><br/>
+
+              <lable for="check">Search for source:</lable>
+              <input type="text" id="check"  name="check" placeholder="Search for Protein or Carbohydrate source " >
+              <button onclick="CheckSource(sourceAll)">Check</button>
             </form>
           </div> <br/>
 
           <div>
             <table>
               <tr>
-                <th>Type</th>
                 <th>Source</th>
+                <th>Type</th>
               </tr>
               <tbody id="tableData">
 
               </tbody>
              
-            </table>
+            </table><br/>
+
+            <div>
+              <h3>Add New Element:</h3>
+              <form id="addElementForm">
+                  <label for="sourceInput">Source:</label>
+                  <input type="text" id="sourceInput" placeholder="Enter source"><br/>
+                  <label for="typeInput">Type:</label>
+                  <input type="text" id="typeInput" placeholder="Enter type"><br/><br/>
+                  <h4>Chose age to add in :  </h4>
+                  <label for="info1">Children</label>
+                  <input id="info1" name="info" type="radio" value="children" checked><br/>
+          
+                  <label for="info2">Adults</label>
+                  <input id="info2" name="info" type="radio" value="adults"><br/>
+          
+                  <label for="info3">Elderly</label>
+                  <input id="info3" name="info" type="radio" value="elderly"><br/>
+          
+                  <button type="button" onclick="addNewElement()">Add Element</button>
+              </form>
           </div>
+          <br/>
+          
+          
+          </div>
+
         </div>
 
         <!-- End of form and table -->

@@ -9,8 +9,60 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
+    <header>
+        <!-- navbar and image in the header -->
+        <nav class="navbar navbar-expand-sm  bg-white  navbar-light ">
+            <div class="container-fluid ">
+              <a class="logo-img" class="navbar-brand" href="/index.html">
+                <img class="" src="../Images/logoLight.jpeg" alt="" width="50px" height="45px">
+              </a>
+              <!-- adding button for the toggler -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- centering the nav links using 'justify-content-center' -->
+              <div class="collapse navbar-collapse justify-content-center " id="mynavbar">
+                <ul class="navbar-nav ">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./mempership.html">Membership</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./trainers.html">Trainer</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./infoFitness.html">Fitness info</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./aboutUs.html">About Us</a>
+                  </li>
+                  
+                  <li class="nav-item">
+                    <a class="nav-link" href="./contactUs.html">Contact Us</a>
+                  </li>
 
-    <div class="container" style="padding: 1%;">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-bs-toggle="dropdown" >
+                      More
+                    </a>
+                    <ul class="dropdown-menu " >
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculation.html">calculation</a></li>
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./fun.html">Fun</a></li>
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li>
+                      <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculationjQuery.html">CalculationjQuery</a></li></ul>
+                </li>
+                 
+                </ul>
+                
+              </div>
+            </div>
+          </nav>
+
+</header>
+
+    <div class="container" style="padding: 1%; height: 100vh; margin-bottom:10vw ;">
         <div class="card">
             <div class="card-body">
                 <h2>Discount page</h2>
