@@ -74,6 +74,13 @@
                               <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./fun.html">Fun</a></li>
                               <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li>
                               <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculationjQuery.html">CalculationjQuery</a></li></ul>
+
+                              <li class="nav-item">
+                            <a class="nav-link" href="./SignUp.html">SignUp</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="./LogIn.html">Login</a>
+                          </li>
                         </li>
                          
                         </ul>
@@ -123,41 +130,113 @@
           </div> <br/>
           <div>
             <h5>Age:</h5>
-            <form action="">
+            <form action="infoFitness.php" method="post">
               <label for="age1">Children</label>
-              <input id="age1" name="age" type="radio" onchange="loadData(tableChildrensData)" >
+              <!-- loadData(tableChildrensData) -->
+              <input id="age1" name="age" type="radio" value="children"  >
 
               <label for="age2" >Adult</label>
-              <input id="age2"name="age" type="radio" value="adult" onchange="loadData(tableAdultsData)">
+              <input id="age2"name="age" type="radio" value="adult" >
 
               <label for="age3">Elderly</label>
-              <input id="age3" name="age" type="radio" value="elderly" onchange="loadData(tableElderlyData)"><br/>
+              <input id="age3" name="age" type="radio" value="elderly" ><br/>
+              <input type="submit" value="Submit">
 
-              <lable for="check">Search for source:</lable>
-              <input type="text" id="check"  name="check" placeholder="Search for Protein or Carbohydrate source " >
-              <button onclick="CheckSource(sourceAll)">Check</button>
+                <!-- <lable for="check">Search for source:</lable>
+                <input type="text" id="check"  name="check" placeholder="Search for Protein or Carbohydrate source " >
+                <button onclick="CheckSource(sourceAll)">Check</button> -->
             </form>
           </div> <br/>
 
-          <div>
-            <table>
-              <tr>
+          <!-- <div>
+           <table>
+            <tr>
                 <th>Source</th>
                 <th>Type</th>
-              </tr>
-              <tbody id="tableData">
+            </tr>
+            <tbody> -->
+            <?php
+    // Define arrays with data for different age groups
+    $tableChildrensData = [
+      ['type' => 'Protein', 'source' => 'Lean meats'],
+      ['type' => 'Carbohydrate', 'source' => 'bread'],
+      ['type' => 'Protein', 'source' => 'Fish'],
+      ['type' => 'Carbohydrate', 'source' => 'Fruits'],
+      ['type' => 'Protein', 'source' => 'Eggs'],
+      ['type' => 'Carbohydrate', 'source' => 'Vegetables'],
+      ['type' => 'Protein', 'source' => 'milk']
+    ];
 
-              </tbody>
-             
-            </table><br/>
+    $tableAdultsData = [
+      ['type' => 'Protein', 'source' => 'Lean meats'],
+      ['type' => 'Carbohydrate', 'source' => 'Whole grains'],
+      ['type' => 'Protein', 'source' => 'Eggs'],
+      ['type' => 'Carbohydrate', 'source' => 'Sweet potatoes'],
+      ['type' => 'Protein', 'source' => 'Nuts'],
+      ['type' => 'Carbohydrate', 'source' => 'pasta'],
+      ['type' => 'Protein', 'source' => 'Legumes']
+    ];
 
+    $tableElderlyData = [
+      ['type' => 'Protein', 'source' => 'Lean meats'],
+      ['type' => 'Carbohydrate', 'source' => 'oats'],
+      ['type' => 'Protein', 'source' => 'seafood'],
+      ['type' => 'Carbohydrate', 'source' => 'brown rice'],
+      ['type' => 'Protein', 'source' => 'Protein shakes'],
+      ['type' => 'Carbohydrate', 'source' => 'Soft fruits'],
+      ['type' => 'Protein', 'source' => 'Eggs']
+    ];
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['age'])) {
+            $selectedAge = $_POST['age'];
+
+            // Display a table based on the selected age group
+            echo "<h2>Table for $selectedAge</h2>";
+            echo "<table>";
+            echo "<tr><th>Source</th><th>Type</th></tr>";
+            
+            // Choose the appropriate data array based on the selected age
+            $selectedData = [];
+            switch ($selectedAge) {
+                case 'children':
+                    $selectedData = $tableChildrensData;
+                    break;
+                case 'adult':
+                    $selectedData = $tableAdultsData;
+                    break;
+                case 'elderly':
+                    $selectedData = $tableElderlyData;
+                    break;
+                default:
+                    echo "Invalid selection";
+                    break;
+            }
+
+            // Render the table rows
+            foreach ($selectedData as $row) {
+                echo "<tr><td>{$row['source']}</td><td>{$row['type']}</td></tr>";
+            }
+            
+            echo "</table>";
+        }
+    }
+    ?>
+          <!-- </tbody>
+
+        
+
+       
+        </table><br/>
             <div>
+            </div> -->
+            <!-- <div>
               <h3>Add New Element:</h3>
-              <form id="addElementForm">
+              <form id="addElementForm" action="infoFitness.php" method="post">
                   <label for="sourceInput">Source:</label>
-                  <input type="text" id="sourceInput" placeholder="Enter source"><br/>
+                  <input type="text" id="sourceInput" name="sourceInput" placeholder="Enter source"><br/>
                   <label for="typeInput">Type:</label>
-                  <input type="text" id="typeInput" placeholder="Enter type"><br/><br/>
+                  <input type="text" id="typeInput" name="typeInput" placeholder="Enter type"><br/><br/>
                   <h4>Chose age to add in :  </h4>
                   <label for="info1">Children</label>
                   <input id="info1" name="info" type="radio" value="children" checked><br/>
@@ -168,10 +247,10 @@
                   <label for="info3">Elderly</label>
                   <input id="info3" name="info" type="radio" value="elderly"><br/>
           
-                  <button type="button" onclick="addNewElement()">Add Element</button>
+                  <input type="submit" value="Submit">
               </form>
           </div>
-          <br/>
+          <br/> -->
           
           
           </div>
@@ -196,7 +275,7 @@
       </div>
 
       <div style="height: 30vh  ;">
-
+        
       </div>
     </div>
 
