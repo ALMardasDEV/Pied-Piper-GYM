@@ -63,6 +63,13 @@
                           <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li>
                           <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculationjQuery.html">CalculationjQuery</a></li>
                         </ul>
+
+                        <li class="nav-item">
+                          <a class="nav-link" href="./SignUp.html">SignUp</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="./LogIn.html">Login</a>
+                        </li>
                     </li>
                      
                     </ul>
@@ -79,7 +86,8 @@
         <div class="card">
           <div class="card-body">
             <h2>Discount page</h2>
-            <form action="#" method="post" id="userPreferencesForm">
+            <!-- id="userPreferencesForm" -->
+            <form action="../phpFiles/addMembership.php" method="post" >
           
           <div class="mb-3">
               <label for="age" class="form-label">Select Your Age:</label>
@@ -87,6 +95,16 @@
               <select id="age" name="age" class="form-select" required>
                 <!-- Options from 10 to 100 generated using JavaScript -->
               </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="username" class="form-label">Enter your username </label>
+                <input type="text" id="username" name="username" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Enter your password </label>
+                <input type="password" id="password" name="password" class="form-control" required>
               </div>
     
               <div class="mb-3">
@@ -110,7 +128,7 @@
                 </div>
               </div>
     
-              <a href="./Subscribe.html"><button type="submit" class="btn btn-primary">Submit</button></a>
+              <input type="submit" value="submit">
     
             </form>
           </div>

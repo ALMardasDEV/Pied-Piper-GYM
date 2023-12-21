@@ -66,6 +66,13 @@
                           <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./fun.html">Fun</a></li>
                           <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li> 
                           <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculationjQuery.html">CalculationjQuery</a></li></ul>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="./SignUp.html">SignUp</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="./LogIn.html">Login</a>
+                          </li>
                     </li>
                      
                     </ul>
@@ -87,38 +94,97 @@
         </div> <br/>
         <div>
           <h5>Chose period:</h5>
-          <form action="">
-            <label for="info1">one</label>
-            <input id="info1" name="info" type="radio" value="1"  onchange="loadInfo(tableOneData)" >
+          <form action="Membershipinfo.php" method="post">
+            <!-- onchange="loadInfo(tableOneData)" -->
+            <!-- <label for="info1">one</label>
+            <input id="info1" name="info" type="radio" value="1"   >
 
             <label for="info2" >two</label>
-            <input id="info2"name="info" type="radio" value="2" onchange="loadInfo(tableTwoData)">
+            <input id="info2"name="info" type="radio" value="2" >
 
             <label for="info3">six</label>
-            <input id="info3" name="info" type="radio" value="6" onchange="loadInfo(tableSixData)">
+            <input id="info3" name="info" type="radio" value="6" >
 
             <label for="info3">one year</label>
-            <input id="info3" name="info" type="radio" value="12" onchange="loadInfo(tableYearData)"><br/><br/>
+            <input id="info3" name="info" type="radio" value="12" ><br/><br/> -->
 
-            <lable for="check">Search for service:</lable>
-            <input type="text" id="check"  name="check" placeholder="Search for service or price " >
-            <button onclick="CheckSource(membershipAll)">Check</button>
+            <!-- <lable for="check">Enter a period in month : </lable>
+            <input type="text" id="check"  name="check" placeholder="Search for Package " > -->
+            <label for="period">Choose a Package Period:</label>
+
+            <select id="period" name="period">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              
+            </select>
+            <input type="submit" value="Submit">
           </form>
         </div> <br/>
 
         <div>
-          <table>
-            <tr>
-              <th>Service</th>
-              <th>Price</th>
-            </tr>
-            <tbody id="tableData">
+        <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get the selected period from the form
+    $selectedPeriod = $_POST["period"];
 
-            </tbody>
-           
-          </table><br/>
+    // Establish connection to MySQL
+    $conn = mysqli_connect('localhost', 'root', '') or die(mysqli_error());
+    $db_select = mysqli_select_db($conn, 'PiedPiperDB') or die(mysqli_error());
 
-          <div>
+    // SQL Query to retrieve services based on the selected period
+    $sql = "SELECT * FROM services WHERE service_id = '$selectedPeriod' LIMIT 1";
+
+    // Execute the query to fetch services
+    $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
+
+    // Check if data exists and render it in the table
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $price = $row['price'];
+        $service1 = $row['service_1'];
+        $service2 = $row['service_2'];
+        $service3 = $row['service_3'];
+
+        // Output the retrieved services in a table
+        echo "<table>
+                <tr>
+                    <th>Service</th>
+                    <th></th>
+                    <th></th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>$service1</td>
+               
+                    <td>$service2</td>
+                
+                    <td>$service3</td>
+
+                    <td>$price</td> 
+                </tr>
+              </table>";
+    } else {
+        echo "No data available for the selected period.";
+    }
+
+    // Close the connection
+    mysqli_close($conn);
+}
+?>
+
+
+
+          <!-- <div>
             <br/>
             <hr>
             
@@ -133,11 +199,11 @@
         
                 <button type="button" onclick="addNewSuggestion()">Add suggestion</button>
             </form>
-        </div>
+        </div> -->
         <br/>
         <br/>
         
-        <table>
+        <!-- <table>
           <tr>
             <th>Service</th>
             <th>Price</th>
@@ -146,7 +212,7 @@
 
           </tbody>
          
-        </table><br/>
+        </table><br/> -->
         
         </div>
         

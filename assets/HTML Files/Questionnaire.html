@@ -119,6 +119,13 @@
                             <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./fun.html">Fun</a></li>
                             <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./Questionnaire.html">Questionnaire</a></li>
                               <li class="dropdown-item" style="color: black;" onmouseover="this.style.color='white'" onmouseout="this.style.color='black'"><a class="nav-link" href="./calculationjQuery.html">CalculationjQuery</a></li></ul>
+
+                              <li class="nav-item">
+                                <a class="nav-link" href="./SignUp.html">SignUp</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="./LogIn.html">Login</a>
+                              </li>
                     </li>
                      
                     </ul>
@@ -134,7 +141,8 @@
 
 
         <br>
-        <form id="gymFeedbackForm" onsubmit="return validateForm()">
+        <!-- id="gymFeedbackForm" onsubmit="return validateForm()" -->
+        <form  id="gymFeedbackForm" action="../phpFiles/submit_feedback.php" method="post">
             <label for="trainerName">Trainer's Name:</label>
             <input type="text" id="trainerName" name="trainerName" required>
             <div id="trainerNameError" class="error"></div>
@@ -147,9 +155,7 @@
             <textarea id="gymFeedback" name="gymFeedback" rows="4" required></textarea>
             <div id="gymFeedbackError" class="error"></div>
     
-            <label for="trainerEmail">Trainer's Email:</label>
-            <input type="email" id="trainerEmail" name="trainerEmail" required>
-            <div id="trainerEmailError" class="error"></div>
+            
     
             <label>Preferred Contact Methods:</label>
             <div id="contactMethodOptions" class="options">
@@ -159,9 +165,7 @@
             </div>
             <div id="contactMethodError" class="error"></div>
             
-            <label for="additionalComments">Additional Comments:</label>
-            <textarea id="additionalComments" name="additionalComments" rows="4"></textarea>
-            <div id="additionalCommentsError" class="error"></div>
+           
     
             <label for="equipmentSatisfaction">Equipment Satisfaction:</label>
             <div id="equipmentSatisfactionOptions" class="options">
